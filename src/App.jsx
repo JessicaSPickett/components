@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import PersonCard from "./components/PersonCard";
+import Button from "./components/Button";
+import FruitCard from "./components/FruitCard";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function handleClick() {
+  console.log("Button clicked!");
 }
 
-export default App
+function App() {
+  return (
+    <div>
+      <PersonCard name="Alice Wonderland" age={25} occupation="Explorer" />
+      <PersonCard name="Bob Builder" age={30} occupation="Engineer" />
+      <PersonCard name="Charlie Chocolate" age={40} occupation="Confectioner" />
+
+      <Button text="Click Me" onClick={handleClick} />
+      <Button text="Test the second button" onClick={handleClick} />
+
+      <FruitCard fruit="Mango" color="Red" />
+      <FruitCard fruit="Banana" color="Yellow" />
+      <FruitCard fruit="Strawberry" color="Purple" />
+    </div>
+  );
+}
+
+export default App;
